@@ -1,0 +1,132 @@
+# Project: Inlandsis
+# Makefile created by Dev-C++ 4.9.9.2
+
+CPP  = g++.exe
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = 
+OBJ  = main.o demarage.o jeux.o combat.o statut.o sauve.o bestiaireMob.o attaque.o map2.o util.o test.o map1.o Event.o map3.o map4.o choixmenu.o Abestire.o objet.o magie.o equipement.o remplir_statut.o remplir_jeux.o remplir_choix_perso.o map5.o map6.o remplirobjet.o remplirobjet2.o expertise.o techniques.o remplirmagie.o utiliseobjet.o utilisemagie.o utilisetechnique.o affichearme.o affichearmure.o $(RES)
+LINKOBJ  = main.o demarage.o jeux.o combat.o statut.o sauve.o bestiaireMob.o attaque.o map2.o util.o test.o map1.o Event.o map3.o map4.o choixmenu.o Abestire.o objet.o magie.o equipement.o remplir_statut.o remplir_jeux.o remplir_choix_perso.o map5.o map6.o remplirobjet.o remplirobjet2.o expertise.o techniques.o remplirmagie.o utiliseobjet.o utilisemagie.o utilisetechnique.o affichearme.o affichearmure.o $(RES)
+LIBS =  -L"lib" -mwindows -lmingw32 -lSDLmain -lSDL -lSDL_image -lSDL_ttf  
+INCS =  -I"include" 
+CXXINCS =  -I"lib/gcc/mingw32/3.4.2/include"  -I"include/c++/3.4.2/backward"  -I"include/c++/3.4.2/mingw32"  -I"include/c++/3.4.2"  -I"include" 
+BIN  = Inlandsis.exe
+CXXFLAGS = $(CXXINCS)  
+CFLAGS = $(INCS)  
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before Inlandsis.exe all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o "Inlandsis.exe" $(LIBS)
+
+main.o: main.c 
+	$(CC) -c main.c -o main.o $(CFLAGS)
+
+demarage.o: demarage.c demarage.h variable.h sauve.h
+	$(CC) -c demarage.c -o demarage.o $(CFLAGS)
+
+jeux.o: jeux.c jeux.h variable.h
+	$(CC) -c jeux.c -o jeux.o $(CFLAGS)
+
+combat.o: combat.c combat.h variable.h
+	$(CC) -c combat.c -o combat.o $(CFLAGS)
+
+statut.o: statut.c jeux.h variable.h
+	$(CC) -c statut.c -o statut.o $(CFLAGS)
+
+sauve.o: sauve.c variable.h sauve.h
+	$(CC) -c sauve.c -o sauve.o $(CFLAGS)
+
+bestiaireMob.o: bestiaireMob.c combat.h
+	$(CC) -c bestiaireMob.c -o bestiaireMob.o $(CFLAGS)
+
+attaque.o: attaque.c combat.h variable.h
+	$(CC) -c attaque.c -o attaque.o $(CFLAGS)
+
+map2.o: map2.c fmap.h utils.h sauve.h variable.h
+	$(CC) -c map2.c -o map2.o $(CFLAGS)
+
+util.o: util.c utils.h sauve.h variable.h
+	$(CC) -c util.c -o util.o $(CFLAGS)
+
+test.o: test.c fmap.h utils.h sauve.h
+	$(CC) -c test.c -o test.o $(CFLAGS)
+
+map1.o: map1.c fmap.h utils.h sauve.h variable.h
+	$(CC) -c map1.c -o map1.o $(CFLAGS)
+
+Event.o: Event.c Event.h variable.h
+	$(CC) -c Event.c -o Event.o $(CFLAGS)
+
+map3.o: map3.c fmap.h utils.h sauve.h variable.h
+	$(CC) -c map3.c -o map3.o $(CFLAGS)
+
+map4.o: map4.c fmap.h utils.h sauve.h variable.h
+	$(CC) -c map4.c -o map4.o $(CFLAGS)
+
+choixmenu.o: choixmenu.c variable.h
+	$(CC) -c choixmenu.c -o choixmenu.o $(CFLAGS)
+
+Abestire.o: Abestire.c jeux.h variable.h
+	$(CC) -c Abestire.c -o Abestire.o $(CFLAGS)
+
+objet.o: objet.c objet.h jeux.h variable.h
+	$(CC) -c objet.c -o objet.o $(CFLAGS)
+
+magie.o: magie.c objet.h jeux.h variable.h
+	$(CC) -c magie.c -o magie.o $(CFLAGS)
+
+equipement.o: equipement.c jeux.h variable.h
+	$(CC) -c equipement.c -o equipement.o $(CFLAGS)
+
+remplir_statut.o: remplir_statut.c jeux.h variable.h
+	$(CC) -c remplir_statut.c -o remplir_statut.o $(CFLAGS)
+
+remplir_jeux.o: remplir_jeux.c jeux.h variable.h
+	$(CC) -c remplir_jeux.c -o remplir_jeux.o $(CFLAGS)
+
+remplir_choix_perso.o: remplir_choix_perso.c jeux.h variable.h
+	$(CC) -c remplir_choix_perso.c -o remplir_choix_perso.o $(CFLAGS)
+
+map5.o: map5.c fmap.h utils.h sauve.h variable.h
+	$(CC) -c map5.c -o map5.o $(CFLAGS)
+
+map6.o: map6.c fmap.h utils.h sauve.h variable.h
+	$(CC) -c map6.c -o map6.o $(CFLAGS)
+
+remplirobjet.o: remplirobjet.c objet.h variable.h
+	$(CC) -c remplirobjet.c -o remplirobjet.o $(CFLAGS)
+
+remplirobjet2.o: remplirobjet2.c objet.h variable.h
+	$(CC) -c remplirobjet2.c -o remplirobjet2.o $(CFLAGS)
+
+expertise.o: expertise.c objet.h jeux.h variable.h
+	$(CC) -c expertise.c -o expertise.o $(CFLAGS)
+
+techniques.o: techniques.c objet.h jeux.h variable.h
+	$(CC) -c techniques.c -o techniques.o $(CFLAGS)
+
+remplirmagie.o: remplirmagie.c magie.h variable.h
+	$(CC) -c remplirmagie.c -o remplirmagie.o $(CFLAGS)
+
+utiliseobjet.o: utiliseobjet.c combat.h variable.h
+	$(CC) -c utiliseobjet.c -o utiliseobjet.o $(CFLAGS)
+
+utilisemagie.o: utilisemagie.c combat.h variable.h
+	$(CC) -c utilisemagie.c -o utilisemagie.o $(CFLAGS)
+
+utilisetechnique.o: utilisetechnique.c combat.h variable.h
+	$(CC) -c utilisetechnique.c -o utilisetechnique.o $(CFLAGS)
+
+affichearme.o: affichearme.c objet.h variable.h
+	$(CC) -c affichearme.c -o affichearme.o $(CFLAGS)
+
+affichearmure.o: affichearmure.c objet.h variable.h
+	$(CC) -c affichearmure.c -o affichearmure.o $(CFLAGS)
